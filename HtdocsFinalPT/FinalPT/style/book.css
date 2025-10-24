@@ -1,0 +1,57 @@
+/* General layout */
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  min-height: 100vh;
+}
+
+.map-container {
+  height: 50vh;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Booking Card */
+.booking-card {
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* Inputs and Selects */
+.form-control,
+.form-select {
+  border: 1px solid #000;
+  border-radius: 8px;
+  transition: 0.2s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Button */
+.btn-primary {
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: #0056b3;
+  transform: scale(1.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .map-container {
+    height: 40vh;
+  }
+}

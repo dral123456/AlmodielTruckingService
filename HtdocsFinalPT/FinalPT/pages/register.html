@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../style/register.css" />
+  <title>Register</title>
+</head>
+<body>
+  <div class="container-fluid register d-flex align-items-center justify-content-center">
+    <div class="form-container shadow p-4 rounded ">
+      <h2 class="text-center mb-4 fw-bold text-light">Create an Account</h2>
+
+      <form id="registerForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username <span class="text-danger">*</span></label>
+          <input type="email" class="form-control" id="username" placeholder="Enter your email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+          <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password <span class="text-danger">*</span></label>
+          <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstname" class="form-label">First Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="firstname" placeholder="Ex. Jethro" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastname" class="form-label">Last Name <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="lastname" placeholder="Ex. Almodiel" required>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label for="number" class="form-label">Phone Number <span class="text-danger">*</span></label>
+          <input type="tel" class="form-control" id="number" placeholder="Ex. 09123456789" required>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="city" class="form-label">City / Municipality<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="city" placeholder="Ex. Bacolod City" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="brgy" class="form-label">Barangay <span class="text-danger">*</span></label>
+            <input type="text" class="form-control" id="brgy" placeholder="Ex. Brgy. Mansiligan">
+          </div>
+        </div>
+
+        <div class="d-grid">
+          <button type="button" id="register" class="btn btn-primary btn-lg">Register</button>
+        </div>
+
+        <p class="text-center mt-3 mb-0">
+          Already have an account? <a href="../pages/login.html" class="text-decoration-none">Login here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../script/register.js"></script>
+</body>
+</html>

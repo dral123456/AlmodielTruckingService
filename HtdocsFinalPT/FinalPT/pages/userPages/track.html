@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queuing Books</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS (for subtle animations) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: "Poppins", sans-serif;
+    }
+
+         .navbar {
+      background-color: #fff !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+      font-weight: 500;
+    }
+
+    .profile-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Table Container */
+    .table-container {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+      padding: 25px;
+      margin: 60px auto;
+      max-width: 1100px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Table Styling */
+    table {
+      border-collapse: separate;
+      border-spacing: 0 10px;
+      width: 100%;
+    }
+
+    thead th {
+      background-color: #0d6efd;
+      color: #fff;
+      font-weight: 600;
+      text-align: center;
+      padding: 12px;
+      border: none;
+      border-radius: 8px 8px 0 0;
+    }
+
+    tbody tr {
+      background-color: #ffffff;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+
+    tbody tr:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background-color: #f1f5ff;
+    }
+
+    td {
+      padding: 14px;
+      vertical-align: middle;
+      text-align: center;
+      border: 1px solid #dee2e6;
+      font-weight: 500;
+      color: #333;
+    }
+
+    /* Responsive Behavior */
+    @media (max-width: 768px) {
+      .table-container {
+        padding: 15px;
+        margin: 20px;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tbody td {
+        display: block;
+        text-align: left;
+        padding: 10px 5px;
+        border: none;
+        border-bottom: 1px solid #dee2e6;
+      }
+
+      tbody tr {
+        margin-bottom: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+      }
+
+      tbody td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: 600;
+        color: #0d6efd;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
+  <div class="container-fluid">
+    <!-- Left: Logo -->
+    <a class="navbar-brand" href="./home.html">
+      <img src="../../images/logo.png" alt="Bootstrap" width="50" height="50">
+    </a>
+
+    <!-- Right: Toggle button (hamburger) -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Center: Nav Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item"><a class="nav-link active px-3 fw-medium" href="./home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-medium" href="track.html">Track</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-medium" href="#">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-medium" href="../userPages/index.html">Book</a></li>
+      </ul>
+    </div>
+
+    <!-- Profile Dropdown (Visible on both mobile and desktop) -->
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="profile-icon" style="width:40px; height:40px;">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-danger" href="../../database/logout.php">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Modern Table -->
+  <div class="table-container" data-aos="fade-up">
+    <h4 class="mb-4 text-center fw-semibold ">Your Booking</h4>
+    <table id="locationsTable" class="table align-middle">
+      <thead>
+        <tr>
+          <th>Driver Name</th>
+          <th>Date</th>
+          <th>Pick-Up Point</th>
+          <th>Destination</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS dynamically fills this -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true
+    });
+
+    // Verify user access
+    $.ajax({
+      url: "../../database/verify.php",
+      method: "GET",
+      dataType: "json",
+      success: function(response) {
+        if (!response.success) {
+          alert("You must log in first!");
+          window.location.href = "../login.html";
+          return;
+        }
+
+        if (response.role !== "user") {
+          alert("Access denied for admin!");
+          window.location.href = "../admin.php";
+        }
+      },
+      error: function() {
+        alert("Error verifying session. Please log in again.");
+        window.location.href = "../pages/login.html";
+      }
+    });
+  </script>
+
+  <script src="../../script/userTrack.js"></script>
+</body>
+</html>

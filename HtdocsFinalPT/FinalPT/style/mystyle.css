@@ -1,0 +1,148 @@
+/* 🌌 Modern Dark Background */
+body {
+  /* background: linear-gradient(135deg, #0a192f, #172a45); */
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* color: #000; */
+}
+
+#logo{
+  max-width: 10px;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* 🗺️ Map */
+.map-container {
+  height: 50vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+/* 🧊 Booking Form */
+.booking-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  color: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  transition: 0.3s;
+}
+/* .booking-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+} */
+
+/* Input and select styles */
+.form-control,
+.form-select,
+#plotForm input,
+#plotForm select {
+  background: rgba(255, 255, 255, 0.1);
+  color: #000; /* Change text color to black for better contrast */
+  border: 1px solid #eee; /* Black border */
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+}
+
+/* On focus (when typing inside the input) */
+.form-control:focus,
+.form-select:focus,
+#plotForm input:focus,
+#plotForm select:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #000; /* Keep black border even when focused */
+  box-shadow: none; /* Remove blue glow */
+  outline: none;
+}
+
+/* 💡 Buttons */
+.btn-primary {
+  background: #00bfff;
+  border: none;
+  transition: 0.3s ease;
+}
+.btn-primary:hover {
+  background: #0099cc;
+  transform: scale(1.05);
+}
+.btn-outline-light:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* Floating plot form */
+#plotForm {
+  display: none;
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 270px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+#plotForm input, #plotForm select {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+}
+#plotForm button {
+  margin-top: 10px;
+  background: #00bfff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  padding: 8px 10px;
+  width: 48%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#plotForm button:hover {
+  background: #0099cc;
+}
+#plotForm .close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+
+
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .map-container {
+    height: 40vh;
+  }
+  .booking-card {
+    padding: 1.5rem;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

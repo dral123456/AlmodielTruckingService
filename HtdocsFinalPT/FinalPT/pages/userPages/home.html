@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <link
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    rel="stylesheet"
+  >
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+
+        .navbar {
+      background-color: #fff !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+      font-weight: 500;
+    }
+
+    .profile-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+  body {
+      background-color: #f8f9fa;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .box {
+      position: relative;
+      background-color: #d9d9d9;
+      height: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .big-box {
+      height: 620px;
+    }
+
+    /* Background images */
+    .box.book {
+      background: url("../../images/pexels-shvets-production-9052846.jpg") center/cover no-repeat;
+    }
+
+    .box.track {
+      background: url("../../images/pexels-rickyrecap-3002308.jpg") center/cover no-repeat;
+    }
+
+    .box.pricing {
+      background: url("https://images.unsplash.com/photo-1556742044-3c52d6e88c62") center/cover no-repeat;
+    }
+
+    .box.contact {
+      background: url("../../images/pexels-jeshoots-4831.jpg") center/cover no-repeat;
+    }
+
+    /* Overlay for better text contrast */
+    .box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    .box span {
+      position: relative;
+      z-index: 2;
+    }
+
+    a{
+        text-decoration: none;
+    }
+  </style>
+
+</head>
+<body>
+    
+ <div class="page-wrapper">
+
+    <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm py-2">
+  <div class="container-fluid">
+    <!-- Left: Logo -->
+    <a class="navbar-brand" href="./home.html">
+      <img src="../../images/logo.png" alt="Bootstrap" width="50" height="50">
+    </a>
+
+    <!-- Right: Toggle button (hamburger) -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Center: Nav Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item"><a class="nav-link active px-3 fw-medium" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-medium" href="track.html">Track</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-medium" href="#">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link px-3 fw-medium" href="../userPages/index.html">Book</a></li>
+      </ul>
+    </div>
+
+    <!-- Profile Dropdown (Visible on both mobile and desktop) -->
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="profileDropdown"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile" class="profile-icon" style="width:40px; height:40px;">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-danger" href="../../database/logout.php">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-5">
+    <div class="row g-3">
+      <!-- Left large box -->
+      <div class="col-12 col-md-6" data-aos="fade" data-aos-delay="200" data-aos-duration="1000">
+       <a href="../userPages/index.html"><div class="box big-box book"><span>Book</span></div></a>
+      </div>
+
+      <!-- Right side -->
+      <div class="col-12 col-md-6">
+        <div class="row g-3">
+          <!-- Top wide box -->
+          <div class="col-12" data-aos="fade" data-aos-delay="400" data-aos-duration="1000">
+            <a href="../userPages/track.html"><div class="box track"><span>Track</span></div></a>
+          </div>
+          <!-- Bottom two boxes -->
+          <div class="col-12 col-sm-6" data-aos="fade" data-aos-delay="600" data-aos-duration="1000">
+            <a href=""><div class="box pricing"><span>Pricing</span></div></a>
+          </div>
+          <div class="col-12 col-sm-6" data-aos="fade" data-aos-delay="800" data-aos-duration="1000">
+            <div class="box contact"><span>Contact</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+$.ajax({
+        url: "../../database/verify.php", 
+        method: "GET",
+        dataType: "json",
+        success: function(response) {
+          if (!response.success) {
+            alert("You must log in first!");
+            window.location.href = "../login.html";
+            return;
+          }
+
+          if (response.role !== "user") {
+            alert("Access denied for admin!");
+            window.location.href = "../admin.php";
+          }
+        },
+        error: function() {
+          alert("Error verifying session. Please log in again.");
+          window.location.href = "../pages/login.html";
+        }
+      });
+
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+    AOS.init({
+      duration: 800,
+      once: false
+    });
+</script>
+</body>
+</html>
